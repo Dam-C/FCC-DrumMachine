@@ -1,5 +1,16 @@
+:root {
+  --main-bg-color: rgb(96, 86, 11);
+  --primary-color: rgb(211, 229, 50);
+  --secondary-color: rgb(68, 49, 5);
+  --ternary-color: rgb(162, 172, 78);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: rgb(96, 86, 11);
+  background-color: var(--main-bg-color);
 }
 #root {
   display: flex;
@@ -7,8 +18,23 @@ body {
   justify-content: center;
 }
 #drum-machine {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  padding: 30px;
   margin: auto;
-  border: 3px solid rgb(211, 229, 50);
+  border: 15px solid var(--ternary-color);
+  display: flex;
+}
+
+.drum-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.drum-pad {
+  width: 100px;
+  height: 80px;
+  background-color: var(--primary-color);
+  border: 10px solid var(--secondary-color);
+  box-shadow: 1px;
 }

@@ -12,7 +12,6 @@ const SoundBTN = ({ props }) => {
     dispatch(displaySound(props.name));
   };
 
-  const currKey = props.keypad;
   const handleKeyDown = (event) => {
     if (
       event.key === props.keypad ||

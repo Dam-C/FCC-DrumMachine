@@ -61,20 +61,31 @@ body {
 }
 
 .on-off-btn {
+  width: 150px;
   display: flex;
   flex-direction: row;
   padding: 10px;
   background-color: var(--main-color);
+  cursor: pointer;
+}
+
+.on-btn,
+.off-btn {
+  width: 70px;
+  padding: 10px;
+  text-align: center;
 }
 
 .on-btn {
   background-color: greenyellow;
-  padding: 10px;
 }
 
 .off-btn {
   background-color: red;
-  padding: 10px;
+}
+
+.turn-off {
+  background-color: var(--main-color);
 }
 
 .display-sound-name {
@@ -90,4 +101,21 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--ternary-color);
+  height: 1Opx;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 50px;
+  color: aqua;
 }

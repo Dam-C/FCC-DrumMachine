@@ -32,9 +32,13 @@ const SoundBTN = ({ name, keypad, link }) => {
       onClick={() => playSound()}
     >
       {keypad}
-      <audio className="clip" ref={audioRef} id={keypad} src={link}>
-        <source src={link} type="audio/mp3" />
-      </audio>
+      <audio
+        className="clip"
+        ref={audioRef}
+        id={keypad}
+        src={link}
+        type="audio/mp3"
+      ></audio>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 //import PropTypes from "prop-types";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { changeBank } from "./redux/soundsSlice";
 
 const Settings = () => {
   const [drumOn, setDrumOn] = useState(true);

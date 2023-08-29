@@ -6,19 +6,17 @@ import SoundBTN from "./soundBTN";
 
 function App() {
   const pads = useSelector((state) => state.sounds.soundBank.soundsList);
-  // const audioRefs = pads.map(() => React.createRef());
-  //console.log(audioRefs);
-  // const playSound = (index) => {
-  //   audioRefs[index].current.play();
-  // };
-  //console.log(pads);
-
   return (
     <main id="drum-machine">
       <div id="display">
         <div className="drum-board">
           {pads.map((pad, index) => (
-            <SoundBTN props={pad} key={index} />
+            <SoundBTN
+              key={index}
+              name={pad.name}
+              keypad={pad.keypad}
+              link={pad.link}
+            />
           ))}
         </div>
         <Settings />

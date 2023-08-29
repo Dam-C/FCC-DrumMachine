@@ -3,20 +3,17 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { displaySound } from "./redux/soundsSlice";
 
-const SoundBTN = ({ props }) => {
+const SoundBTN = ({ name, keypad, link }) => {
   const dispatch = useDispatch();
   const audioRef = React.createRef();
 
   const playSound = () => {
     audioRef.current.play();
-    dispatch(displaySound(props.name));
+    dispatch(displaySound(name));
   };
 
   const handleKeyDown = (event) => {
-    if (
-      event.key === props.keypad ||
-      event.key === props.keypad.toLowerCase()
-    ) {
+    if (event.key === keypad || event.key === keypad.toLowerCase()) {
       playSound();
     }
   };
@@ -29,21 +26,23 @@ const SoundBTN = ({ props }) => {
   }, []);
 
   return (
-    <div id={props.name} className="drum-pad" onClick={() => playSound()}>
-      {props.keypad}
-      <audio className="clip" ref={audioRef} id={props.keypad} src={props.link}>
-        <source src={props.link} type="audio/mp3" />
+    <div
+      id={name === "undefined" ? "temp" : name}
+      className="drum-pad"
+      onClick={() => playSound()}
+    >
+      {keypad}
+      <audio className="clip" ref={audioRef} id={keypad} src={link}>
+        <source src={link} type="audio/mp3" />
       </audio>
     </div>
   );
 };
 
 SoundBTN.propTypes = {
-  props: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    keypad: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  keypad: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default SoundBTN;

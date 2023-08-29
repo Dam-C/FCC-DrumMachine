@@ -4,7 +4,7 @@ export const soundBanks = {
       {
         name: "attack",
         keypad: "Q",
-        link: "./assets/soundbank-start/attack.mp3",
+        link: "../src/assets/soundbank-start/attack.mp3",
       },
       {
         name: "blip",

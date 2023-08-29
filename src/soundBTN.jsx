@@ -31,8 +31,8 @@ const SoundBTN = ({ props }) => {
   return (
     <div id={props.name} className="drum-pad" onClick={() => playSound()}>
       {props.keypad}
-      <audio className="clip" ref={audioRef} id={props.keypad} src={props.link}>
-        <source type="audio/mp3" />
+      <audio className="clip" ref={audioRef} id={props.keypad}>
+        <source src={props.link} type="audio/mp3" />
       </audio>
     </div>
   );

@@ -4,7 +4,7 @@ import { soundBanks } from "../soundBanks";
 const soundsSlice = createSlice({
   name: "sounds",
   initialState: {
-    soundBank: soundBanks.bankA,
+    soundBank: soundBanks.bankB,
     soundPlayed: "none",
   },
   reducers: {

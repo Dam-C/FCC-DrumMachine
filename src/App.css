@@ -1,8 +1,8 @@
 :root {
-  --main-bg-color: rgb(96, 86, 11);
-  --primary-color: rgb(211, 229, 50);
-  --secondary-color: rgb(68, 49, 5);
-  --ternary-color: rgb(162, 172, 78);
+  --main-color: rgb(95, 53, 12);
+  --primary-color: rgb(194, 154, 84);
+  --secondary-color: rgb(237, 155, 41);
+  --ternary-color: rgb(250, 235, 215);
 }
 
 * {
@@ -12,7 +12,7 @@
 body {
   font-family: "Press Start 2P", cursive;
 
-  background-color: var(--main-bg-color);
+  background-color: var(--primary-color);
 }
 #root {
   display: flex;
@@ -22,13 +22,14 @@ body {
 #drum-machine {
   padding: 30px;
   margin: auto;
-  border: 15px solid var(--ternary-color);
+  border: 15px solid var(--main-color);
   display: flex;
 }
 
 #display {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   width: 100%;
 }
 
@@ -41,8 +42,9 @@ body {
 .drum-pad {
   width: 100px;
   height: 80px;
-  background-color: var(--primary-color);
-  border: 10px solid var(--secondary-color);
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+  border: 10px solid var(--main-color);
   box-shadow: 1px;
   display: flex;
   flex-direction: column;
@@ -56,5 +58,36 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 300px;
-  border: 1px solid black;
+}
+
+.on-off-btn {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: var(--main-color);
+}
+
+.on-btn {
+  background-color: greenyellow;
+  padding: 10px;
+}
+
+.off-btn {
+  background-color: red;
+  padding: 10px;
+}
+
+.display-sound-name {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: var(--ternary-color);
+}
+
+.volume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }

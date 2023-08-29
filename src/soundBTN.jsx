@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { displaySound, changeBank } from "./redux/soundsSlice";
+import { displaySound } from "./redux/soundsSlice";
 
 const SoundBTN = ({ props }) => {
   const dispatch = useDispatch();
@@ -12,10 +12,12 @@ const SoundBTN = ({ props }) => {
     dispatch(displaySound(props.name));
   };
 
-  const currKey = props.pushkey;
-
+  const currKey = props.keypad;
   const handleKeyDown = (event) => {
-    if (event.key === currKey) {
+    if (
+      event.key === props.keypad ||
+      event.key === props.keypad.toLowerCase()
+    ) {
       playSound();
     }
   };
